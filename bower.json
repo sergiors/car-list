@@ -4,7 +4,7 @@
   "authors": [
     "Sérgio Rafael Siqueira <sergiorsiqueira9@gmail.com>"
   ],
-  "license": "private",
+  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",

@@ -18,6 +18,10 @@ var App = App || {};
             }.bind(this));
         },
 
+        componentWillUnmount: function() {
+            Backbone.Events.off('change:cars');
+        },
+
         render: function() {
             return (
                 <div>

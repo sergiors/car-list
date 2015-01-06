@@ -8,7 +8,7 @@ var App = App || {};
 
     var Bootstrap = React.createClass({
         componentWillMount: function() {
-            cars.on('sync', function() {
+            cars.once('sync', function() {
                 this.forceUpdate();
             }, this);
         },
