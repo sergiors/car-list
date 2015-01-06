@@ -5,7 +5,7 @@ var App = App || {};
     
     var Cars = Backbone.Collection.extend({
         model: App.Car,
-        url: '/api/cars.json'
+        url: 'api/cars.json'
     });
 
     App.Cars = Cars;

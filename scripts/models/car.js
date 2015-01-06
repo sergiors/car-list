@@ -9,7 +9,7 @@ var App = App || {};
         },
 
         urlRoot: function() {
-            return '/api/cars/' + this.id + '.json';
+            return 'api/cars/' + this.id + '.json';
         }
     });
 
