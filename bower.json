@@ -1,0 +1,20 @@
+{
+  "name": "dashboard",
+  "version": "0.0.1",
+  "authors": [
+    "Sérgio Rafael Siqueira <sergiorsiqueira9@gmail.com>"
+  ],
+  "license": "private",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.12.2",
+    "backbone": "~1.1.2",
+    "jquery": "~2.1.3"
+  }
+}
