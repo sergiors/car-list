@@ -7,16 +7,26 @@ var App = App || {};
       , Sidebar = App.Sidebar;
 
     var Bootstrap = React.createClass({
+        getInitialState: function() {
+            return {
+                cars: []
+            }
+        },
+        
         componentWillMount: function() {
-            cars.once('sync', function() {
-                this.forceUpdate();
-            }, this);
+            Backbone.Events.on('sync:cars', function(cars) {
+                this.setState({cars: cars});
+            }.bind(this));
+        },
+        
+        componentWillUnmount: function() {
+            Backbone.Events.off('sync:cars');
         },
 
         render: function() {
             return (
                 <div>
-                    <Sidebar cars={this.props.cars} />
+                    <Sidebar cars={this.state.cars} />
                     <Content />
                 </div>
             );
@@ -30,5 +40,5 @@ var App = App || {};
     var cars = router.cars
       , mount = document.getElementById('bootstrap');
 
-    React.render(<Bootstrap cars={cars} />,mount);
+    React.render(<Bootstrap />,mount);
 })();

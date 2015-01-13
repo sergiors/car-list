@@ -15,7 +15,8 @@ var App = App || {};
         initialize: function(callback) { // keep an eye on callback
             this.cars = new Cars();
             this.cars.fetch();
-            this.cars.on('sync', function() {
+            this.cars.on('sync', function(cars) {
+                Backbone.Events.trigger('sync:cars', cars);
                 callback();
             });
         },
